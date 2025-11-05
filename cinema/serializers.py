@@ -41,8 +41,8 @@ class MovieRetrieveSerializer(MovieSerializer):
 
 
 class MovieSessionSerializer(serializers.ModelSerializer):
-    movie = Movie.objects.all()
-    cinema_hall = CinemaHall.objects.all()
+    movie = serializers.PrimaryKeyRelatedField(queryset=Movie.objects.all())
+    cinema_hall = serializers.PrimaryKeyRelatedField(queryset=CinemaHall.objects.all())
 
     class Meta:
         model = MovieSession
