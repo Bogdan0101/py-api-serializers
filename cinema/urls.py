@@ -8,8 +8,8 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register("movies", MovieViewSet)
-router.register("movie-sessions", MovieSessionViewSet)
-router.register("cinema-halls", CinemaHallViewSet)
+router.register("movie_sessions", MovieSessionViewSet)
+router.register("cinema_halls", CinemaHallViewSet)
 router.register("actors", ActorViewSet)
 router.register("genres", GenreViewSet)
 urlpatterns = [path("", include(router.urls)), ]
