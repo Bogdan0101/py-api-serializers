@@ -42,7 +42,7 @@ class MovieSessionViewSet(viewsets.ModelViewSet):
         queryset = self.queryset
         if self.action == "list" or self.action == "retrieve":
             queryset = queryset.select_related("movie", "cinema_hall")
-        return queryset.all()
+        return queryset
 
 
 class MovieViewSet(viewsets.ModelViewSet):
@@ -60,4 +60,4 @@ class MovieViewSet(viewsets.ModelViewSet):
         queryset = self.queryset
         if self.action == "list" or self.action == "retrieve":
             queryset = queryset.prefetch_related("actors", "genres")
-        return queryset.all()
+        return queryset
